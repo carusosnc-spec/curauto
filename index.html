@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#101311"><meta name="description" content="Prenota il tuo intervento CurAuto: ripristino cielo auto, recupero plastiche, rinnovo interni e valutazione personalizzata.">
+<title>CurAuto — Ripristino e cura degli interni auto</title>
+<link rel="icon" href="./assets/logo.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<style>
+:root{--bg:#0c0f0d;--panel:#141916;--panel2:#1b211d;--text:#f5f7f5;--muted:#a7b0aa;--orange:#ff6a00;--green:#20c466;--line:#303a33;--radius:22px}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:radial-gradient(ellipse at 85% 0%,#183322 0,transparent 34%),var(--bg);color:var(--text);font-family:'DM Sans',sans-serif;line-height:1.55}a{color:inherit}button,input,select,textarea{font:inherit}button{cursor:pointer}.wrap{width:min(1120px,calc(100% - 36px));margin:auto}.topbar{display:flex;justify-content:space-between;align-items:center;padding:22px 0}.brand{width:min(260px,58vw);display:block}.nav{display:flex;gap:18px;align-items:center}.nav a{text-decoration:none;color:#d6ddd8;font-size:14px}.pill{border:1px solid var(--line);background:#151b17;border-radius:999px;padding:10px 15px}.hero{padding:54px 0 70px;display:grid;grid-template-columns:1.15fr .85fr;gap:48px;align-items:center}.eyebrow{color:var(--green);font-weight:800;text-transform:uppercase;letter-spacing:2px;font-size:12px}.hero h1{font:800 clamp(42px,6vw,72px)/1.04 Manrope,sans-serif;letter-spacing:-2.8px;margin:16px 0 22px}.hero h1 em{color:var(--orange);font-style:normal}.hero p{font-size:18px;color:#c3ccc6;max-width:570px}.actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:28px}.btn{border:0;border-radius:13px;padding:14px 20px;font-weight:800;display:inline-flex;justify-content:center;align-items:center;gap:8px;text-decoration:none;transition:transform .15s,filter .15s}.btn:hover{transform:translateY(-1px);filter:brightness(1.08)}.primary{background:var(--orange);color:#111}.secondary{background:#202922;color:white;border:1px solid #39463d}.hero-card{background:linear-gradient(145deg,#1b241e,#111512);border:1px solid #354139;border-radius:28px;padding:28px;box-shadow:0 22px 60px #0005}.car-icon{height:150px;display:grid;place-items:center;font-size:90px;background:radial-gradient(ellipse,#23442e,transparent 70%);margin-bottom:14px}.feature{display:flex;gap:12px;align-items:center;border-top:1px solid var(--line);padding:15px 0}.dot{width:11px;height:11px;border-radius:50%;background:var(--orange);flex:none}.feature:nth-of-type(3) .dot{background:var(--green)}.section{padding:45px 0 72px}.section-head{display:flex;justify-content:space-between;gap:20px;align-items:end;margin-bottom:25px}.section h2{font:800 clamp(28px,4vw,42px)/1.1 Manrope,sans-serif;margin:8px 0}.muted{color:var(--muted)}.cards{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}.service{background:var(--panel);border:1px solid var(--line);border-radius:18px;padding:20px;display:flex;flex-direction:column;min-height:220px}.service .num{font:800 30px Manrope;color:var(--orange)}.service h3{font:700 18px Manrope;margin:12px 0 7px}.service p{font-size:14px;color:var(--muted);margin:0 0 16px}.service small{margin-top:auto;color:#d5ded7}.booking-grid{display:grid;grid-template-columns:.7fr 1.3fr;gap:22px;align-items:start}.booking-aside,.booking-form,.admin-box{background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);padding:25px}.booking-aside{background:linear-gradient(155deg,#1d2c21,#131714)}.booking-aside h3{font:800 24px Manrope;margin-top:0}.step{display:flex;gap:12px;margin:18px 0}.step strong{width:30px;height:30px;display:grid;place-items:center;background:#26372b;color:var(--green);border-radius:10px;flex:none}.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}.field{display:flex;flex-direction:column;gap:7px}.field.full{grid-column:1/-1}.field label{font-size:13px;color:#d6ddd8;font-weight:700}.field input,.field select,.field textarea{width:100%;border:1px solid #3b463e;background:#0e120f;color:#fff;border-radius:11px;padding:12px 13px;min-width:0}.field input:focus,.field select:focus,.field textarea:focus{outline:2px solid #20c46680;border-color:var(--green)}.field textarea{min-height:80px;resize:vertical}.slot-list{display:grid;grid-template-columns:repeat(4,1fr);gap:8px}.slot{padding:10px 5px;background:#101511;color:#eaf0eb;border:1px solid #3a463d;border-radius:10px}.slot.selected{background:var(--green);color:#07140b;border-color:var(--green);font-weight:800}.slot:disabled{opacity:.35;cursor:not-allowed}.notice{padding:12px 14px;border-radius:12px;background:#1c2920;border:1px solid #35533d;color:#d9f7e1;margin:12px 0}.error{background:#321b17;border-color:#653a2b;color:#ffd5c7}.success{background:#153322;border-color:#23623c}.hide{display:none!important}.privacy{font-size:12px;color:var(--muted)}.footer{border-top:1px solid var(--line);padding:28px 0;color:var(--muted);font-size:13px;display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}.link-button{border:0;background:none;color:var(--muted);text-decoration:underline;padding:0}.admin-table{width:100%;border-collapse:collapse;font-size:13px}.admin-table th,.admin-table td{padding:10px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top}.admin-table th{color:var(--muted)}.admin-actions{display:flex;gap:8px;flex-wrap:wrap}.small-btn{border:1px solid var(--line);background:#222a24;color:white;border-radius:8px;padding:7px 9px}.mobile-only{display:none}
+@media(max-width:850px){.hero{grid-template-columns:1fr;gap:26px;padding-top:28px}.hero-card{max-width:540px}.cards{grid-template-columns:repeat(2,1fr)}.booking-grid{grid-template-columns:1fr}.nav a:not(.pill){display:none}.section-head{align-items:start;flex-direction:column}}
+@media(max-width:520px){.wrap{width:min(100% - 24px,1120px)}.topbar{padding:16px 0}.hero h1{letter-spacing:-1.8px}.hero p{font-size:16px}.hero-card,.booking-aside,.booking-form{padding:18px}.cards{grid-template-columns:1fr}.service{min-height:0}.form-grid{grid-template-columns:1fr}.field.full{grid-column:auto}.slot-list{grid-template-columns:repeat(3,1fr)}.section{padding:32px 0 48px}.section-head{margin-bottom:18px}.footer{padding:22px 0}.admin-table{min-width:650px}.table-wrap{overflow:auto}}
+</style></head>
+<body>
+<header class="wrap topbar"><a href="#" aria-label="CurAuto home"><img class="brand" src="./assets/logo.svg" alt="CurAuto"></a><nav class="nav"><a href="#servizi">Servizi</a><a href="#prenota" class="pill">Prenota un intervento ↗</a></nav></header>
+<main>
+<section class="wrap hero"><div><div class="eyebrow">La cura dei dettagli, fatta bene</div><h1>Gli interni della tua auto.<br><em>Come nuovi.</em></h1><p>Ripristino, pulizia e trattamenti mirati per ridare valore agli interni della tua auto. Scegli il servizio e prenota online il tuo appuntamento.</p><div class="actions"><a class="btn primary" href="#prenota">Prenota ora <span>↗</span></a><a class="btn secondary" href="#servizi">Scopri i servizi</a></div><p class="muted" style="font-size:13px;margin-top:18px">Prenotazione online · Conferma automatica dello slot disponibile</p></div>
+<div class="hero-card"><div class="car-icon" aria-hidden="true">🚘</div><div class="eyebrow">CurAuto · Interni auto</div><h2 style="font:800 25px Manrope;margin:8px 0 18px">Un nuovo inizio per la tua auto.</h2><div class="feature"><span class="dot"></span><span>Ripristino cielo auto e rivestimenti</span></div><div class="feature"><span class="dot" style="background:var(--green)"></span><span>Recupero plastiche e pannelli</span></div><div class="feature"><span class="dot"></span><span>Rinnovo e cura degli interni</span></div></div></section>
+<section id="servizi" class="wrap section"><div class="section-head"><div><div class="eyebrow">I nostri interventi</div><h2>Un servizio per ogni esigenza</h2><div class="muted">Scegli l'intervento più adatto. Se hai dubbi, prenota una valutazione personalizzata.</div></div></div><div class="cards" id="services"><div class="muted">Caricamento servizi…</div></div></section>
+<section id="prenota" class="wrap section"><div class="section-head"><div><div class="eyebrow">Prenotazioni online</div><h2>Prenota il tuo appuntamento</h2><div class="muted">Gli orari mostrati sono aggiornati in base alla disponibilità.</div></div></div><div class="booking-grid"><aside class="booking-aside"><h3>Ci vogliono pochi minuti.</h3><p class="muted">Scegli servizio, giorno e orario. Inserisci i tuoi dati e riceverai subito la conferma della prenotazione.</p><div class="step"><strong>1</strong><div><b>Scegli il servizio</b><div class="muted">Intervento e durata prevista</div></div></div><div class="step"><strong>2</strong><div><b>Seleziona data e ora</b><div class="muted">Solo slot ancora disponibili</div></div></div><div class="step"><strong>3</strong><div><b>Conferma</b><div class="muted">La prenotazione viene registrata subito</div></div></div><div id="opening-info" class="notice">Orari di apertura in caricamento…</div></aside>
+<form class="booking-form" id="booking-form"><div id="form-notice" class="notice hide" role="status"></div><div class="form-grid">
+<div class="field full"><label for="service">Servizio *</label><select id="service" required><option value="">Caricamento servizi…</option></select></div>
+<div class="field"><label for="date">Data *</label><input id="date" type="date" required></div>
+<div class="field"><label>Orario disponibile *</label><div id="slots" class="slot-list"><span class="muted">Scegli un servizio e una data.</span></div><input id="start-at" type="hidden" required></div>
+<div class="field"><label for="name">Nome e cognome *</label><input id="name" autocomplete="name" required minlength="2" placeholder="Mario Rossi"></div>
+<div class="field"><label for="phone">Telefono / WhatsApp *</label><input id="phone" type="tel" autocomplete="tel" required minlength="6" placeholder="+39…"></div>
+<div class="field"><label for="email">Email</label><input id="email" type="email" autocomplete="email" placeholder="nome@email.it"></div>
+<div class="field"><label for="make">Marca auto</label><input id="make" placeholder="Es. Fiat"></div>
+<div class="field"><label for="model">Modello</label><input id="model" placeholder="Es. 500X"></div>
+<div class="field"><label for="year">Anno immatricolazione</label><input id="year" type="number" min="1950" max="2035" placeholder="Es. 2020"></div>
+<div class="field full"><label for="notes">Note sul lavoro richiesto (facoltativo)</label><textarea id="notes" placeholder="Descrivi il problema o il risultato che vorresti ottenere…"></textarea></div>
+<div class="field full"><label style="display:flex;gap:9px;align-items:start;font-weight:500"><input id="privacy" type="checkbox" required style="width:auto;margin-top:4px"> Ho letto l'informativa privacy e acconsento al trattamento dei dati per gestire la prenotazione. *</label><span class="privacy">Prima della pubblicazione definitiva va inserita l'informativa privacy completa del titolare.</span></div>
+<div class="field full"><button id="submit-booking" class="btn primary" type="submit">Conferma prenotazione <span>↗</span></button><div class="privacy">Lo slot viene ricontrollato al momento della conferma per evitare doppie prenotazioni.</div></div>
+</div></form></div></section>
+<section id="admin" class="wrap section hide"><div class="section-head"><div><div class="eyebrow">Area riservata</div><h2>Gestione appuntamenti</h2></div><button id="logout" class="btn secondary">Esci</button></div><div class="admin-box"><div id="admin-login"><p class="muted">Accedi con l'account amministratore CurAuto.</p><form id="login-form" class="form-grid"><div class="field"><label for="admin-email">Email</label><input id="admin-email" type="email" required autocomplete="username"></div><div class="field"><label for="admin-password">Password</label><input id="admin-password" type="password" required autocomplete="current-password"></div><div class="field full"><button class="btn primary">Accedi</button></div></form><div id="login-notice" class="notice hide"></div></div><div id="admin-dashboard" class="hide"><div class="admin-actions" style="margin-bottom:16px"><input id="admin-date" type="date" class="pill"><button id="refresh-admin" class="small-btn">Aggiorna</button></div><div id="admin-results" class="table-wrap">Caricamento…</div></div></div></section>
+</main>
+<footer class="wrap footer"><span>© <span id="year-now"></span> CurAuto · Lavaggio, detailing e pulizia interni</span><span><a href="#prenota">Prenota</a> · <button class="link-button" id="admin-toggle">Area riservata</button></span></footer>
+<script>
+(() => {
+const SUPABASE_URL='https://ijkyralyieeybkqjlsey.supabase.co';
+const SUPABASE_KEY='sb_publishable_DF16EPPI5jkkW54YpQ7Rpg_puv7I_9k';
+const sb=window.supabase.createClient(SUPABASE_URL,SUPABASE_KEY);
+const $=id=>document.getElementById(id);
+let services=[],hours=[],settings={},selectedSlot=null;
+$('year-now').textContent=new Date().getFullYear();
+const todayLocal=()=>{const d=new Date();return new Date(d.getTime()-d.getTimezoneOffset()*60000).toISOString().slice(0,10)};
+$('date').min=todayLocal();$('date').max=(()=>{const d=new Date();d.setDate(d.getDate()+90);return new Date(d.getTime()-d.getTimezoneOffset()*60000).toISOString().slice(0,10)})();
+function notice(el,msg,type=''){el.textContent=msg;el.classList.remove('hide','error','success');if(type)el.classList.add(type)}
+function clearNotice(el){el.classList.add('hide')}
+function fmtTime(v){return new Intl.DateTimeFormat('it-IT',{hour:'2-digit',minute:'2-digit',timeZone:'Europe/Rome'}).format(new Date(v))}
+function fmtDate(v){return new Intl.DateTimeFormat('it-IT',{weekday:'long',day:'2-digit',month:'long',year:'numeric',timeZone:'Europe/Rome'}).format(new Date(v))}
+async function loadInitial(){
+ const [s,h,c,st]=await Promise.all([
+  sb.from('services').select('id,name,description,duration_minutes,price_from,sort_order').eq('active',true).order('sort_order'),
+  sb.from('business_hours').select('*').order('day_of_week'),
+  sb.from('closed_dates').select('closed_date'),
+  sb.from('site_settings').select('setting_key,setting_value')
+ ]);
+ if(s.error){$('services').textContent='Non è stato possibile caricare i servizi. Riprova tra poco.';return}
+ services=s.data||[];hours=h.data||[];settings=Object.fromEntries((st.data||[]).map(x=>[x.setting_key,x.setting_value]));
+ $('services').innerHTML=services.map((x,i)=>'<article class="service"><div class="num">0'+(i+1)+'</div><h3>'+esc(x.name)+'</h3><p>'+esc(x.description||'Intervento CurAuto su misura.')+'</p><small>◷ '+x.duration_minutes+' min'+(x.price_from?' · da € '+Number(x.price_from).toLocaleString('it-IT'):' · preventivo personalizzato')+'</small><button class="btn secondary" style="margin-top:16px" data-service="'+x.id+'">Scegli servizio</button></article>').join('');
+ $('service').innerHTML='<option value="">Seleziona un servizio</option>'+services.map(x=>'<option value="'+x.id+'">'+esc(x.name)+' · '+x.duration_minutes+' min</option>').join('');
+ $('opening-info').innerHTML=hours.map(x=>'<div style="display:flex;justify-content:space-between;gap:12px;font-size:13px"><span>'+['Domenica','Lunedì','Martedì','Mercoledì','Giovedì','Venerdì','Sabato'][x.day_of_week]+'</span><span>'+(x.is_open?x.opens_at.slice(0,5)+'–'+x.closes_at.slice(0,5):'Chiuso')+'</span></div>').join('');
+ $('services').querySelectorAll('[data-service]').forEach(b=>b.addEventListener('click',()=>{$('service').value=b.dataset.service;$('prenota').scrollIntoView({behavior:'smooth'});loadSlots()}));
+ if(c.data){const closed=new Set(c.data.map(x=>x.closed_date));$('date').addEventListener('change',()=>{if(closed.has($('date').value)){notice($('form-notice'),'Il centro risulta chiuso in questa data. Scegline un’altra.','error');$('slots').innerHTML='';selectedSlot=null;$('start-at').value=''}else loadSlots()})}
+ if(location.hash==='#admin')showAdmin();
+}
+function esc(v){return String(v??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))}
+async function loadSlots(){
+ selectedSlot=null;$('start-at').value='';clearNotice($('form-notice'));
+ const sid=$('service').value,date=$('date').value;
+ if(!sid||!date){$('slots').innerHTML='<span class="muted">Scegli servizio e data.</span>';return}
+ $('slots').textContent='Controllo disponibilità…';
+ const {data,error}=await sb.rpc('get_available_slots',{p_service_id:sid,p_date:date});
+ if(error){$('slots').textContent='Impossibile caricare gli orari. Riprova.';return}
+ if(!data||!data.length){$('slots').innerHTML='<span class="muted">Nessun orario disponibile. Prova un’altra data.</span>';return}
+ $('slots').innerHTML=data.map(x=>'<button type="button" class="slot" data-slot="'+x.slot_start+'">'+fmtTime(x.slot_start)+'</button>').join('');
+ $('slots').querySelectorAll('[data-slot]').forEach(b=>b.addEventListener('click',()=>{$('slots').querySelectorAll('.slot').forEach(x=>x.classList.remove('selected'));b.classList.add('selected');selectedSlot=b.dataset.slot;$('start-at').value=selectedSlot}));
+}
+$('service').addEventListener('change',loadSlots);$('date').addEventListener('change',loadSlots);
+$('booking-form').addEventListener('submit',async e=>{
+ e.preventDefault();const btn=$('submit-booking');if(!selectedSlot){notice($('form-notice'),'Seleziona prima un orario disponibile.','error');return}
+ btn.disabled=true;btn.textContent='Conferma in corso…';clearNotice($('form-notice'));
+ const payload={p_service_id:$('service').value,p_customer_name:$('name').value.trim(),p_customer_phone:$('phone').value.trim(),p_customer_email:$('email').value.trim()||null,p_vehicle_make:$('make').value.trim()||null,p_vehicle_model:$('model').value.trim()||null,p_vehicle_year:$('year').value?Number($('year').value):null,p_customer_notes:$('notes').value.trim(),p_starts_at:selectedSlot};
+ const {data,error}=await sb.rpc('create_appointment',payload);btn.disabled=false;btn.innerHTML='Conferma prenotazione <span>↗</span>';
+ if(error){notice($('form-notice'),error.message?.replace('Edge Function returned a non-2xx status code','Prenotazione non riuscita')||'Prenotazione non riuscita. Aggiorna gli orari e riprova.','error');await loadSlots();return}
+ const service=services.find(x=>x.id===payload.p_service_id);
+ notice($('form-notice'),'Prenotazione confermata! '+fmtDate(selectedSlot)+' alle '+fmtTime(selectedSlot)+'. Servizio: '+(service?.name||'CurAuto')+'. Ti aspettiamo!','success');
+ $('booking-form').reset();$('slots').innerHTML='<span class="muted">Scegli servizio e data.</span>';selectedSlot=null;$('start-at').value='';
+});
+$('admin-toggle').addEventListener('click',()=>{showAdmin();$('admin').scrollIntoView({behavior:'smooth'})});
+function showAdmin(){ $('admin').classList.remove('hide'); }
+$('login-form').addEventListener('submit',async e=>{e.preventDefault();const {error}=await sb.auth.signInWithPassword({email:$('admin-email').value,password:$('admin-password').value});if(error){notice($('login-notice'),'Accesso non riuscito. Verifica le credenziali e che l’utente sia abilitato come amministratore.','error');return}await loadAdmin()});
+async function loadAdmin(){
+ const {data:{user}}=await sb.auth.getUser();if(!user){$('admin-login').classList.remove('hide');$('admin-dashboard').classList.add('hide');return}
+ const {data:profile}=await sb.from('admin_profiles').select('user_id').eq('user_id',user.id).maybeSingle();
+ if(!profile){await sb.auth.signOut();notice($('login-notice'),'Questo account non è abilitato come amministratore CurAuto.','error');return}
+ $('admin-login').classList.add('hide');$('admin-dashboard').classList.remove('hide');$('admin-date').value=$('admin-date').value||todayLocal();await renderAdmin();
+}
+async function renderAdmin(){
+ const date=$('admin-date').value||todayLocal();$('admin-results').textContent='Caricamento…';
+ const start=date+'T00:00:00+02:00',end=date+'T23:59:59+02:00';
+ const {data,error}=await sb.from('appointments').select('id,customer_name,customer_phone,customer_email,vehicle_make,vehicle_model,customer_notes,starts_at,ends_at,status,services(name)').gte('starts_at',start).lte('starts_at',end).order('starts_at');
+ if(error){$('admin-results').textContent='Errore nel caricamento degli appuntamenti.';return}
+ if(!data?.length){$('admin-results').innerHTML='<p class="muted">Nessun appuntamento per questa data.</p>';return}
+ $('admin-results').innerHTML='<table class="admin-table"><thead><tr><th>Ora</th><th>Cliente / auto</th><th>Servizio</th><th>Stato</th><th>Azioni</th></tr></thead><tbody>'+data.map(a=>'<tr><td>'+fmtTime(a.starts_at)+'–'+fmtTime(a.ends_at)+'</td><td><b>'+esc(a.customer_name)+'</b><br><a href="tel:'+esc(a.customer_phone)+'">'+esc(a.customer_phone)+'</a><br>'+esc([a.vehicle_make,a.vehicle_model].filter(Boolean).join(' '))+'</td><td>'+esc(a.services?.name||'—')+'</td><td>'+esc(a.status)+'</td><td><div class="admin-actions">'+(a.status==='confirmed'?'<button class="small-btn" data-status="completed" data-id="'+a.id+'">Completato</button><button class="small-btn" data-status="cancelled" data-id="'+a.id+'">Annulla</button>':'—')+'</div></td></tr>').join('')+'</tbody></table>';
+ $('admin-results').querySelectorAll('[data-status]').forEach(b=>b.addEventListener('click',async()=>{if(b.dataset.status==='cancelled'&&!confirm('Annullare questa prenotazione?'))return;const {error}=await sb.from('appointments').update({status:b.dataset.status}).eq('id',b.dataset.id);if(error)alert('Operazione non riuscita. Verifica i permessi amministratore.');else renderAdmin()}));
+}
+$('refresh-admin').addEventListener('click',renderAdmin);$('admin-date').addEventListener('change',renderAdmin);$('logout').addEventListener('click',async()=>{await sb.auth.signOut();$('admin-login').classList.remove('hide');$('admin-dashboard').classList.add('hide')});
+sb.auth.getSession().then(({data})=>{if(data.session)loadAdmin()});loadInitial();
+})();
+</script>
+</body></html>
