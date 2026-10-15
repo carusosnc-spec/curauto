@@ -1,10 +1,10 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 240" role="img" aria-labelledby="title desc">
 <title id="title">CurAuto</title><desc id="desc">CurAuto, lavaggio, detailing e pulizia interni per la tua auto</desc>
 <rect width="900" height="240" rx="34" fill="#0b0d0c"/>
-<path d="M35 0H570V10H35Q0 10 0 45V0Z" fill="#ff6a00"/>
-<path d="M570 0H865Q900 0 900 45V10H570Z" fill="#19bf5b"/>
-<rect x="0" y="0" width="900" height="12" rx="6" fill="#ff6a00"/><path d="M570 0H865Q900 0 900 35V12H570Z" fill="#19bf5b"/>
-<text x="38" y="142" font-family="Arial,Helvetica,sans-serif" font-size="126" font-weight="800" letter-spacing="-6" fill="#fff">CurAuto</text><circle cx="812" cy="117" r="14" fill="#ff6a00"/>
-<text x="44" y="190" font-family="Arial,Helvetica,sans-serif" font-size="23" font-weight="700" letter-spacing="1.2" fill="#f4f4f4">LAVAGGIO  —  DETAILING  —  PULIZIA INTERNI</text>
+<path d="M35 0H570V10H35Q0 10 0 45V0Z" fill="#ed2933"/>
+<path d="M570 0H865Q900 0 900 45V10H570Z" fill="#ed2933"/>
+<rect x="0" y="0" width="900" height="12" rx="6" fill="#ed2933"/><path d="M570 0H865Q900 0 900 35V12H570Z" fill="#ed2933"/>
+<text x="38" y="142" font-family="Arial,Helvetica,sans-serif" font-size="126" font-weight="800" letter-spacing="-6"><tspan fill="#f5f5f5">Cur</tspan><tspan fill="#ed2933">Auto</tspan></text><circle cx="812" cy="117" r="14" fill="#ff6a00"/>
+<text x="44" y="190" font-family="Arial,Helvetica,sans-serif" font-size="23" font-weight="700" letter-spacing="1.2" fill="#f4f4f4">PIÙ DI UN SEMPLICE LAVAGGIO</text>
 <rect x="42" y="210" width="390" height="7" rx="3.5" fill="#ff6a00"/><rect x="432" y="210" width="420" height="7" rx="3.5" fill="#19bf5b"/>
 </svg>
